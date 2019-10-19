@@ -19,7 +19,7 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>usuario</from-outcome>
-            <to-view-id>/menuAdministrador.xhtml</to-view-id>
+            <to-view-id>/menuAlumno.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>error</from-outcome>
@@ -46,6 +46,30 @@
             <to-view-id>/menuAdministrador.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/menuAlumno.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>crear</from-outcome>
+            <to-view-id>/menuNuevoAlumno.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>actualizar</from-outcome>
+            <to-view-id>/menuActualizarAlumno.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>ver</from-outcome>
+            <to-view-id>/menuCrearUsuario.xhtml</to-view-id>
+        </navigation-case>        
+        <navigation-case>
+            <from-outcome>error</from-outcome>
+            <to-view-id>/menuAlumno.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    
+    
     
     <managed-bean>
         <description>Bean que gestiona la logica del login</description>
@@ -75,6 +99,54 @@
         <description>Pojo que contiene la logica de crear usuarios</description>
         <managed-bean-name>menuCrearUsuarioBean</managed-bean-name>
         <managed-bean-class>beans.MenuCrearUsuarioBean</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>Bean que gestiona la logical del menu de alumnos</description>
+        <managed-bean-name>menuAlumnoBean</managed-bean-name>
+        <managed-bean-class>beans.MenuAlumnoBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>Bean que gestiona la logica del menu para ingresar nuevos alumnos</description>
+        <managed-bean-name>menuNuevoAlumnoBean</managed-bean-name>
+        <managed-bean-class>beans.MenuNuevoAlumnoBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>pojo que  contiene la estructurta de un alumno</description>
+        <managed-bean-name>alumno</managed-bean-name>
+        <managed-bean-class>pojos.Alumno</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>Pojo que contiene la estructura de las areas</description>
+        <managed-bean-name>area</managed-bean-name>
+        <managed-bean-class>pojos.Area</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>ManagedBean encargado de gestionar el ingreso de nuevos alumnos a nivel del modelo</description>
+        <managed-bean-name>menuNuevoAlumnoDbAction</managed-bean-name>
+        <managed-bean-class>dbActions.MenuNuevoAlumnoDbAction</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>Bean que gestiona la logica del menu para actualizar los datos de alumnos</description>
+        <managed-bean-name>menuActualizarAlumnoBean</managed-bean-name>
+        <managed-bean-class>beans.MenuActualizarAlumnoBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>ManagedBean encargado de gestionar la actulizacion de alumnos a nivel de modelo</description>
+        <managed-bean-name>menuActualizarAlumnoDdAction</managed-bean-name>
+        <managed-bean-class>dbActions.MenuActualizarAlumnoDdAction</managed-bean-class>
+    
+        <managed-bean-scope>request</managed-bean-scope></managed-bean>
+    <managed-bean>
+        <description>Bean que gestiona los reportes</description>
+        <managed-bean-name>reportesBean</managed-bean-name>
+        <managed-bean-class>beans.ReportesBean</managed-bean-class>
         <managed-bean-scope>view</managed-bean-scope>
     </managed-bean>
 </faces-config>
