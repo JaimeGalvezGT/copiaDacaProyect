@@ -25,20 +25,20 @@ public class MenuActualizarAlumnoDdAction {
     public MenuActualizarAlumnoDdAction() {
     }
     
-     public Alumno validarAlumno(String carne){
+     public Alumno validarAlumno(int carne){
         Alumno resultado = new Alumno();
         try{
             Connection conn;
             Conexion conexion = new Conexion();
             conn = conexion.connect();
             Statement st = conn.createStatement();
-            String sql = "select no_carne, nombre, apellido, id_area, ciclo, foto from carnealumno where no_carne = '" + carne + "'";
+            String sql = "select no_carne, nombre, apellido, id_area, ciclo, foto from carnealumno where no_carne = " + carne + "";
             //st.executeUpdate("insert into usuario values ('"+user+"', '"+pass+"', '"+passEncript+"')");
             ResultSet rs = st.executeQuery(sql);            
             if(rs.next()){
                 rs.beforeFirst();
                 while(rs.next()){
-                    resultado.setCarne(rs.getString("no_carne"));            
+                    resultado.setCarne(rs.getInt("no_carne"));            
                     resultado.setNombre(rs.getString("nombre"));
                     resultado.setApellido(rs.getString("apellido"));
                     resultado.setArea(rs.getInt("id_area"));

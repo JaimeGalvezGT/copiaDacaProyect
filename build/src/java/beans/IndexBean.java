@@ -5,9 +5,12 @@
  */
 package beans;
 
+import dbActions.CambioContraseñaDbAction;
 import dbActions.IndexDbAction;
 import pojos.Usuario;
 import utils.Messages;
+import javax.faces.context.FacesContext;
+import org.primefaces.context.RequestContext;
 
 
 
@@ -19,7 +22,8 @@ public class IndexBean {
     //Atributos de la clase
     private String correo;
     private String password;
-    private String passwordEncript;
+    private String newpass;
+    private CambioPassword user;
 
     /**
      * Creates a new instance of IndexBean
@@ -43,20 +47,27 @@ public class IndexBean {
                 if(usuarioValidado != null){
                     if(usuarioValidado.getIdEstado() != 1){
                     resultado = "error";
-                    Messages.errorMessage("Error", "Usuario inactivo!!!");                    
-                    } else if(usuarioValidado.getIdRol() == 1){
+                    Messages.errorMessage("Error", "Usuario inactivo!!!");
+                    
+                    } else if(usuarioValidado.getIdEstado() == 1 && usuarioValidado.getIdRol() == 1){
+                        
                         resultado = "administrador";
-                    } else if(usuarioValidado.getIdRol() == 2){
-                        resultado = "supervisor";
-                    } else if(usuarioValidado.getIdRol() == 3){
+                        
+                    } else if(usuarioValidado.getIdEstado() == 1 && usuarioValidado.getIdRol() == 2){
                         resultado = "usuario";
-                    }
-                } else{
+                    } else if(usuarioValidado.getIdEstado() == 1 && usuarioValidado.getIdRol() == 3){
+                        resultado = "supervisor";
+                    } 
+                    else{
                     resultado = "error";
                     Messages.errorMessage("Error", "Usuario y /o Contraseña incorrectos");
-                }
-            }
-        } catch(Exception ex){
+                    }
+                    
+                    if(usuarioValidado.getCorreo().equals(usuarioValidado.getPassword())){
+                       resultado = "cambiocontrasena";
+                     }
+        }  }
+        }catch(Exception ex){
             ex.printStackTrace();
         }
         return resultado;
@@ -79,12 +90,12 @@ public class IndexBean {
         this.password = password;
     }
 
-    public String getPasswordEncript() {
-        return passwordEncript;
+    public CambioPassword getUser() {
+        return user;
     }
 
-    public void setPasswordEncript(String passwordEncript) {
-        this.passwordEncript = passwordEncript;
+    public void setUser(CambioPassword user) {
+        this.user = user;
     }
         
 }

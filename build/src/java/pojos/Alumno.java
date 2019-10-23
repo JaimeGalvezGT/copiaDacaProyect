@@ -5,13 +5,15 @@
  */
 package pojos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Juan de Dios
  */
-public class Alumno {
+public class Alumno implements Serializable{
     
-    private int carnet;
+    private int carne;
     private String nombre;
     private String apellido;
     private int area;
@@ -23,16 +25,15 @@ public class Alumno {
      */
     public Alumno() {
     }
-    
-    
-    //Metodos gets y sets_____________________
 
-    public int getCarnet() {
-        return carnet;
+
+    //Metodos gets y sets    
+    public int getCarne() {    
+        return carne;
     }
 
-    public void setCarnet(int carnet) {
-        this.carnet = carnet;
+    public void setCarne(int carne) {
+        this.carne = carne;
     }
 
     public String getNombre() {
@@ -74,9 +75,4 @@ public class Alumno {
     public void setFoto(String foto) {
         this.foto = foto;
     }
-
-    public void setCarne(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

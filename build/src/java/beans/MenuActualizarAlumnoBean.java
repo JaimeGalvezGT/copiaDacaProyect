@@ -19,12 +19,13 @@ import utils.Messages;
  */
 public class MenuActualizarAlumnoBean {
     private int carne;
-        private String nombre;
-        private String apellido;
-        private int area;
-        private int ciclo;
-        private String foto;
-           private SelectItem[] listaAreas;
+    private String nombre;
+    private String apellido;
+    private int area;
+    private int ciclo;
+    private String foto;
+    private SelectItem[] listaAreas;
+    private Alumno alumno;
     
 
     /**
@@ -42,8 +43,25 @@ public class MenuActualizarAlumnoBean {
         listaAreas = lista.cargarAreas();
     }
     
+    /**
+     * Metodo que consulta el alumno en funcion del carnet ingresado
+     */
+    public void consultarAlumno(){
+        MenuActualizarAlumnoDdAction actualizar = new MenuActualizarAlumnoDdAction();
+        this.alumno = actualizar.validarAlumno(this.getCarne());
+        if(alumno != null){
+            this.setNombre(alumno.getNombre());
+            this.setApellido(alumno.getApellido());
+            this.setCiclo(alumno.getCiclo());
+            this.setArea(alumno.getArea());
+        }
+    }
+    
+    /**
+     * Metodo que valida el carnet del alumno para consultarlo
+     */
      public void validarActualizacionAlumno(){
-       if(this.getCarne()==0  || this.getNombre().equals("")  ||  this.getApellido().equals("")  || this.getCiclo()==0  || this.getFoto().equals("")  || this.getArea()== -1){
+       if(this.getCarne() <= 0  || this.getNombre().equals("")  ||  this.getApellido().equals("")  || this.getCiclo()==0  || this.getFoto().equals("")  || this.getArea()== -1){
             Messages.warningMessage("Advertencia", "Debe llenar los campos requeridos");
         } else{
             MenuActualizarAlumnoDdAction user = new MenuActualizarAlumnoDdAction ();
@@ -112,6 +130,14 @@ public class MenuActualizarAlumnoBean {
 
     public void setListaAreas(SelectItem[] listaAreas) {
         this.listaAreas = listaAreas;
+    }
+
+    public Alumno getAlumno() {
+        return alumno;
+    }
+
+    public void setAlumno(Alumno alumno) {
+        this.alumno = alumno;
     }
     
 }
