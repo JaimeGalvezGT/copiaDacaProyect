@@ -20,7 +20,7 @@ import java.sql.SQLException;
 public class Conexion implements Serializable{
      //Atributos de la conexion
     private String host = "localhost";
-    private String port = "3306";
+    private String port = "3307";
     private String userName = "root";
     private String password = "admon";
     private String dbName = "daca";
