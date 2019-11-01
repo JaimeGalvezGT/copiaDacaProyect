@@ -9,8 +9,9 @@
     <ui:define name="content">
                <div align="center" style="margin-top: 50px; margin-right: 50px">
                   <h1 style="color: white">Gestion de Alumnos</h1>
+                  <h2 style="color: white">"DACA 1.0"</h2>             
                   <br/>
-                   <h:form id="menuAlumnoForm">
+                <h:form id="menuAlumnoForm">
                 <p:panel style="text-align: center; background-color: transparent; width: 400px">
                     <table align="center" cellspacing="20" style="color: white">
                        <tr>
@@ -43,13 +44,19 @@
                         <tr>
                             <td colspan="2" align="center">
                                 <p:commandButton id="btnConsultaAlumno" value="Consultar" title="Presione el boton para hacer consultas de alumnos"
-                                             action="#{menuAlumnoBean.irmenuNuevoAlumno()}"     update="menuAlumnoForm"/>
+                                             action="#{menuAlumnoBean.irMenuConsultarAlumno()}"     update="menuAlumnoForm"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <p:commandButton value="Cerrar Sesion" title="Presione el boton para cerrar la sesión iniciada"
+                                             action="#{menuAlumnoBean.cerrarSesion()}"     update="menuAlumnoForm"/>
                             </td>
                         </tr>
                     </table>
                 </p:panel>
-                    </h:form>
-        </div>        
+                </h:form>
+                </div>        
          
     </ui:define>
 
