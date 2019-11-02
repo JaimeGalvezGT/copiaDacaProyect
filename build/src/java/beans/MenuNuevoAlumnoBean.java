@@ -32,6 +32,10 @@ public class MenuNuevoAlumnoBean {
         cargarAreas();
     }
     
+     public String irMenuPricipal(){
+       String resultado="regresar";
+               return resultado;
+   }
     /**
      * Metodo que carga las areas de los alumnos
      */

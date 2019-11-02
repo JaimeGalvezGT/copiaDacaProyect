@@ -10,11 +10,7 @@
             <to-view-id>/menuAdministrador.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>director</from-outcome>
-            <to-view-id>/menuAdministrador.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>coordinador</from-outcome>
+            <from-outcome>supervisor</from-outcome>
             <to-view-id>/menuAdministrador.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
@@ -39,7 +35,7 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>error</from-outcome>
-            <to-view-id>/menuAdministrador.xhtml</to-view-id>
+            <to-view-id>/cambioContrasena.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     
@@ -61,6 +57,10 @@
             <from-outcome>error</from-outcome>
             <to-view-id>/menuAdministrador.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>reportes</from-outcome>
+            <to-view-id>/reportes.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -75,11 +75,47 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>ver</from-outcome>
-            <to-view-id>/menuCrearUsuario.xhtml</to-view-id>
-        </navigation-case>        
+            <to-view-id>/menuConsultaAlumno.xhtml</to-view-id>
+        </navigation-case>   
+        <navigation-case>
+            <from-outcome>salir</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>     
         <navigation-case>
             <from-outcome>error</from-outcome>
             <to-view-id>/menuAlumno.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/menuNuevoAlumno.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>regresar</from-outcome>
+            <to-view-id>/menuAlumno.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+     <navigation-rule>
+        <from-view-id>/menuActualizarAlumno.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>regresar</from-outcome>
+            <to-view-id>/menuAlumno.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/menuConsultaAlumno.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>regresar</from-outcome>
+            <to-view-id>/menuAlumno.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/reportes.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>regresar</from-outcome>
+            <to-view-id>/menuAdministrador.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     
@@ -158,6 +194,24 @@
         <description>Bean que gestiona los reportes</description>
         <managed-bean-name>reportesBean</managed-bean-name>
         <managed-bean-class>beans.ReportesBean</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>Bean que gestiona la logica del menu consultar un alumno</description>
+        <managed-bean-name>menuConsultaAlumnoBean</managed-bean-name>
+        <managed-bean-class>beans.MenuConsultaAlumnoBean</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>ManagedBean encargado de gestional el ingreso de nuevos alumnos a nivel de modelo</description>
+        <managed-bean-name>menuConsultaAlumnoDbAction</managed-bean-name>
+        <managed-bean-class>dbActions.MenuConsultaAlumnoDbAction</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>Bean que gestiona la logica del cambio de password</description>
+        <managed-bean-name>cambioPassword</managed-bean-name>
+        <managed-bean-class>beans.CambioPassword</managed-bean-class>
         <managed-bean-scope>view</managed-bean-scope>
     </managed-bean>
 </faces-config>

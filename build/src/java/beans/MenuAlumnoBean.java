@@ -27,9 +27,13 @@ public class MenuAlumnoBean {
         String resultado = "actualizar";
         return resultado;
     }
-    public String irMenuVerAlumno(){
+    public String irMenuConsultarAlumno(){
         String resultado = "ver";
         return resultado;
     }
+     public String cerrarSesion(){
+       String resultado="salir";
+               return resultado;
+   }
        
 }

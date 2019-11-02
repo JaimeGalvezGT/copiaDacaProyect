@@ -24,8 +24,13 @@ public class CambioContraseñaDbAction implements Serializable{
     public CambioContraseñaDbAction() {
     }
     
-    
-     public int cambiarContraseña(String password, String correo) {
+    /**
+     * Metodo que realiza el cambio de la contraseña
+     * @param password
+     * @param correo
+     * @return 
+     */
+    public int cambiarContraseña(String password, String correo) {
         int result = 0;
         try {
             Connection conn;

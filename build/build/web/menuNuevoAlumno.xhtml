@@ -15,53 +15,53 @@
                 <p:panel style="text-align: center; background-color: transparent; width: 800px">
                    <table align="center" cellspacing="20" style="color: white">
                         <tr>
-                            <td>
+                            <td style="text-align: left">
                                 <p:outputLabel value="Carné"/>
                             </td>
-                            <td>
+                            <td style="text-align: left">
                                 <p:inputText value="#{menuNuevoAlumnoBean.carne}"/>
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td style="text-align: left">
                                 <p:outputLabel value="Nombre"/>
                             </td>
-                            <td>
+                            <td style="text-align: left">
                                 <p:inputText value="#{menuNuevoAlumnoBean.nombre}" />
                             </td>
                         </tr>
                        <tr>
-                            <td>
+                            <td style="text-align: left">
                                 <p:outputLabel value="Apellido"/>
                             </td>
-                            <td>
+                            <td style="text-align: left">
                                 <p:inputText value="#{menuNuevoAlumnoBean.apellido}" />
                             </td>
                         </tr>
                        <tr>
-                            <td>
+                            <td style="text-align: left">
                                 <p:outputLabel value="Area"/>
                             </td>
-                            <td>
-                              <p:selectOneMenu id="area" value="#{menuNuevoAlumnoBean.area}" >
+                            <td style="text-align: left">
+                              <p:selectOneMenu id="area" value="#{menuNuevoAlumnoBean.area}" style="width: 300px" >
                                     <f:selectItem itemValue="-1" itemLabel="Seleccione"/>
                                     <f:selectItems value="#{menuNuevoAlumnoBean.listaAreas}"  />
                                 </p:selectOneMenu>
                             </td>
                         </tr>
                        <tr>
-                            <td>
+                            <td style="text-align: left">
                                 <p:outputLabel value="Ciclo"/>
                             </td>
-                            <td>
+                            <td style="text-align: left">
                                 <p:inputText  value="#{menuNuevoAlumnoBean.ciclo}"/>
-                            </td>
+                            </td >
                         </tr>
-                          <tr>
-                            <td>
+                        <tr>
+                            <td style="text-align: left">
                                 <p:outputLabel value="Nombre Foto"/>
                             </td>
-                            <td>
+                            <td style="text-align: left">
                                 <p:inputText value="#{menuNuevoAlumnoBean.foto}" />
                             </td>
                         </tr>
@@ -69,6 +69,12 @@
                             <td colspan="4" align="center">
                                 <p:commandButton  value="Registrar" title="Presione el boton para registra un nuevo alumno a el sistema"
                                                  action="#{menuNuevoAlumnoBean.validarAlumno()}" update="menuNuevoAlumnoForm"/>
+                            </td>
+                        </tr>
+                       <tr>
+                            <td colspan="4" align="right">
+                                <p:commandButton  value="Regresar" title="Presione el boton para regresar al menu principal de Gestion de Alumnos"
+                                                 action="#{menuNuevoAlumnoBean.irMenuPricipal()}" update="menuNuevoAlumnoForm"/>
                             </td>
                         </tr>
                     </table>

@@ -32,7 +32,6 @@ public class IndexDbAction {
             conn = conexion.connect();
             Statement st = conn.createStatement();
             String sql = "select correo, password, nombre, apellido, id_estado, id_rol, fecha_creacion from usuario where correo = '" + email + "' and password = '" + pass + "'";
-            //st.executeUpdate("insert into usuario values ('"+user+"', '"+pass+"', '"+passEncript+"')");
             ResultSet rs = st.executeQuery(sql);            
             if(rs.next()){
                 rs.beforeFirst();
