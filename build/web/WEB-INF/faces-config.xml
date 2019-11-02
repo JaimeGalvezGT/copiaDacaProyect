@@ -192,8 +192,8 @@
         <managed-bean-scope>view</managed-bean-scope></managed-bean>
     <managed-bean>
         <description>Bean que gestiona los reportes</description>
-        <managed-bean-name>reportesBean</managed-bean-name>
-        <managed-bean-class>beans.ReportesBean</managed-bean-class>
+        <managed-bean-name>crearReporteBean</managed-bean-name>
+        <managed-bean-class>beans.CrearReporteBean</managed-bean-class>
         <managed-bean-scope>view</managed-bean-scope>
     </managed-bean>
     <managed-bean>

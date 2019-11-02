@@ -36,6 +36,9 @@ public class MenuAdministradorBean implements Serializable{
         String resultado = "ver";
         return resultado;
     }
-    
+    public String irMenuReportes(){
+        String resultado = "reportes";
+        return resultado;
+    }
 }
 

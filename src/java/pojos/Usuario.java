@@ -28,6 +28,20 @@ public class Usuario {
     public Usuario() {
     }
 
+    public Usuario(String correo, String password, String nombre, String apellido, int idEstado, String estadoDescr, int idRol, String rolDescr, Date fechaCreacion) {
+        this.correo = correo;
+        this.password = password;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.idEstado = idEstado;
+        this.estadoDescr = estadoDescr;
+        this.idRol = idRol;
+        this.rolDescr = rolDescr;
+        this.fechaCreacion = fechaCreacion;
+    }
+    
+    
+
     //Metodos gets y sets
     public String getCorreo() {
         return correo;

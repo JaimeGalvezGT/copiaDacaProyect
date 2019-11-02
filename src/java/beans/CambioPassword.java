@@ -22,8 +22,14 @@ public class CambioPassword implements Serializable{
      * Creates a new instance of CambioPassword
      */
     public CambioPassword() {
+        
     }
-     public String cambiarContraseña(){
+    
+    /**
+     * Metodo que valida el cambio de password
+     * @return 
+     */
+    public String cambiarContraseña(){
         String result = "";
         if(this.getPassword().equals("") || this.getComprobacion().equals("")){
             Messages.warningMessage("Advertencia", "Debe llenar los campos requeridos");
@@ -42,6 +48,7 @@ public class CambioPassword implements Serializable{
         return result;
     }
 
+    //Metodos gets y sets
     public String getCorreo() {
         return correo;
     }
